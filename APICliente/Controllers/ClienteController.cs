@@ -25,21 +25,8 @@ namespace APICliente.Controllers
                 MediaTypeWithQualityHeaderValue("application/json"));
             }
         }
-        // GET: Cliente
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        //incluindo um novo produto
-        //[HttpGet]
-        //public ActionResult Incluir()
-        //{
-        //    return View();
-        //}
-
-        [HttpPost]
-        public async Task<ActionResult> Listar(LimiteCliente cliente)
+        
+        public async Task<ActionResult> Listar() 
         {
             try
             {
@@ -66,6 +53,13 @@ namespace APICliente.Controllers
                 ViewBag.Erro = ex.Message;
                 return View("_Erro");
             }
+
+
+        // GET: Cliente
+        }
+        public ActionResult Index()
+        {
+            return View();
         }
 
     }
