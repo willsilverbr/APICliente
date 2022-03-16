@@ -1,0 +1,40 @@
+﻿@model IEnumerable<APICliente.Models.VendasCliente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Venda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor_Venda)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data_Venda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor_Venda)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Codigo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Codigo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Codigo })
+        </td>
+    </tr>
+}
+
+</table>
